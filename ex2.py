@@ -42,7 +42,7 @@ np.savetxt("Matriz.txt", m, delimiter="\t", fmt="%f") #dá overwrite ao ficheiro
 print(m)
 
 
-#Exercício 4:
+#Exercício 2:
 
 
 #Exercício 3:
