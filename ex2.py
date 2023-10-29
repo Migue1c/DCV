@@ -1,7 +1,7 @@
 import numpy as np
 import math
 
-#Exercício 1
+#Exercício 1:
 
 
 #definir valores iniciais de x e y:
@@ -24,8 +24,8 @@ i = 0
 j = 0
 x = x_0
 y = y_0
-'''print(i_r)
-print(j_r)'''
+#print(i_r)
+#print(j_r)
 
 for i in range(i_r):
 
@@ -42,5 +42,54 @@ np.savetxt("Matriz.txt", m, delimiter="\t", fmt="%f") #dá overwrite ao ficheiro
 print(m)
 
 
+#Exercício 4:
 
-#Exercício 2
+
+#Exercício 3:
+
+
+#reset das condições iniciais
+i = 0
+j = 0
+#definir uma variável para ser o maior numero e atribuir um valor inicial
+b = m[0,0] 
+#definir uma variável para ser as "coordenadas" desse numero
+b_c =np.array([0,0])
+
+for i in range(i_r):
+
+    for j in range(j_r):
+        if m[i,j] <= b:
+            b = m[i,j]
+            k = i+1
+            n = j+1
+            b_c = np.array([k,n])
+
+    j=0
+
+print("O menor elemento da Matriz é:",b_c,"com o valor:",b)
+
+
+#Exercício 4:
+
+
+#reset das condições iniciais
+i = 0
+j = 0
+#definir uma variável para ser o maior numero e atribuir um valor inicial
+c = m[0,0] 
+#definir uma variável para ser as "coordenadas" desse numero
+c_c =np.array([0,0])
+
+for i in range(i_r):
+
+    for j in range(j_r):
+        if m[i,j] >= c:
+            c = m[i,j]
+            k = i+1
+            n = j+1
+            c_c = np.array([k,n])
+
+    j=0
+
+print("O maior elemento da Matriz é:",c_c,"com o valor:",c)
