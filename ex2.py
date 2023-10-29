@@ -36,7 +36,7 @@ for i in range(i_r):
     y = y_0
     x += x_p
 
-np.savetxt("Matriz.txt", m, delimiter="\t", fmt="%f")
-
-
-
+'''with open("Matriz.txt", "a") as file:
+    np.savetxt(file, m, delimiter="\t", fmt="%f") ''' #para acrescentar os valores da matriz ao ficheiro
+np.savetxt("Matriz.txt", m, delimiter="\t", fmt="%f") #dá overwrite ao ficheiro
+print(m)
