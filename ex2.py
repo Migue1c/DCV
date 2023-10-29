@@ -44,14 +44,32 @@ print(m)
 
 #Exercício 2:
 
+#reset das condições iniciais
+i = 0
+j = 0
+#definir uma variável para ser o menor numero e atribuir um valor inicial
+a = m[0,6] 
+#definir uma variável para ser as "coordenadas" desse numero
+a_c =np.array([0,0])
+
+for i in range(i_r):
+    if m[i,6] <= a:
+        a = m[i,6]
+        k = i+1
+        a_c = np.array([k,6])
+
+    j=0
+
+print("2.O menor elemento da sexta coluna é:",a_c,"com o valor:",a)
+
+
 
 #Exercício 3:
-
 
 #reset das condições iniciais
 i = 0
 j = 0
-#definir uma variável para ser o maior numero e atribuir um valor inicial
+#definir uma variável para ser o menor numero e atribuir um valor inicial
 b = m[0,0] 
 #definir uma variável para ser as "coordenadas" desse numero
 b_c =np.array([0,0])
@@ -61,17 +79,17 @@ for i in range(i_r):
     for j in range(j_r):
         if m[i,j] <= b:
             b = m[i,j]
-            k = i+1
-            n = j+1
-            b_c = np.array([k,n])
+            k1 = i+1
+            n1 = j+1
+            b_c = np.array([k1,n1])
 
     j=0
 
-print("O menor elemento da Matriz é:",b_c,"com o valor:",b)
+print("3.O menor elemento da Matriz é:",b_c,"com o valor:",b)
+
 
 
 #Exercício 4:
-
 
 #reset das condições iniciais
 i = 0
@@ -86,10 +104,10 @@ for i in range(i_r):
     for j in range(j_r):
         if m[i,j] >= c:
             c = m[i,j]
-            k = i+1
-            n = j+1
-            c_c = np.array([k,n])
+            k2 = i+1
+            n2 = j+1
+            c_c = np.array([k2,n2])
 
     j=0
 
-print("O maior elemento da Matriz é:",c_c,"com o valor:",c)
+print("4.O maior elemento da Matriz é:",c_c,"com o valor:",c)
