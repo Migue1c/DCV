@@ -36,10 +36,7 @@ for i in range(i_r):
     y = y_0
     x += x_p
 
-#file_path = "Matriz.txt"
 np.savetxt("Matriz.txt", m, delimiter="\t", fmt="%f")
-
-print(m)
 
 
 
