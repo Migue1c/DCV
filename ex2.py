@@ -40,3 +40,7 @@ for i in range(i_r):
     np.savetxt(file, m, delimiter="\t", fmt="%f") ''' #para acrescentar os valores da matriz ao ficheiro
 np.savetxt("Matriz.txt", m, delimiter="\t", fmt="%f") #dá overwrite ao ficheiro
 print(m)
+
+
+
+#Exercício 2
