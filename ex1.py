@@ -21,7 +21,7 @@ det_a = np.linalg.det(a)
 a_inv = np.linalg.inv(a)
 
 print("Exercício 2: \n Determinante de A:",det_a, "\n Inversa da Matriz A:\n",a_inv)
-
+    
 
 #Exercício 3:
 
