@@ -7,11 +7,15 @@ Cg_P = np.array([[120],
                 [140]])
 
 #definir valores para os ângulos:
-alfa = math.radians(5)
+alpha = math.radians(5)
 beta = math.radians(1)
-teta = math.radians(60)
+theta = math.radians(60)
 phi = math.radians(30)
 psi = math.radians(45)
 
-#definir matriz de transformação:
+#definir matriz de transformação (como uma função):
 
+def T(a,b): #a->alpha e b->beta
+    return np.array([[math.cos(a)*math.sin(b), -math.cos(a)*math.sin(b), -math.sin(a)],  
+                     [math.sin(b), math.cos(b), 0],
+                     [math.sin(a)*math.cos(b), -math.sin(a)*math.sin(b), math.cos(a)]])
