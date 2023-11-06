@@ -47,4 +47,4 @@ Cg_P_terrestre = R(theta,phi,psi).dot(Cg_P_aeronave)
 #o vetor O_P é a soma dos vetores O_Cg e Cg_P (no referencial terrestre)
 O_P = O_Cg + Cg_P_terrestre
 #print(O_P)
-print("Ex1.2 - O_P(Ro):",O_P[0,0],"Xo",O_P[1,0],"Yo",O_P[2,0],"Zo")
+print("Ex1.2 - O_P(Ro):",O_P[0,0],"Xo",O_P[1,0],"Yo",O_P[2,0],"Zo") 1
