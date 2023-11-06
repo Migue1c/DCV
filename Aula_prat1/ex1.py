@@ -14,8 +14,8 @@ phi = math.radians(30)
 psi = math.radians(45)
 
 #definir matriz de transformação (como uma função):
-
 def T(a,b): #a->alpha e b->beta
     return np.array([[math.cos(a)*math.sin(b), -math.cos(a)*math.sin(b), -math.sin(a)],  
                      [math.sin(b), math.cos(b), 0],
                      [math.sin(a)*math.cos(b), -math.sin(a)*math.sin(b), math.cos(a)]])
+
