@@ -40,4 +40,8 @@ z_0 = x_0 + k_1*h
 k_2 = f(z_0,w)
 
 x_1 = x_0 + h*((k_1 + k_2)/2)
-print(x_1)
+
+print("Para t1 = 0.01s :")
+print("phi(t1):", x_1[0], "deg")
+print("theta(t1):", x_1[1], "deg")
+print("psi(t1):", x_1[2], "deg")
