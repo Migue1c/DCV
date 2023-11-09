@@ -31,6 +31,3 @@ v,w = np.linalg.eig(a)
 #print("Valores Proprios de A:\n",v,"\n""Vetores proprios de A:\n",w)
 print("Valores Proprios de A:\nv1:",v[0],"\nv2:",v[1],"\nv3:",v[2],"\nv4:",v[3])
 print("Vetores Proprios de A:\nV1:",w[:,0],"\nV2:",w[:,1],"\nV3:",w[:,2],"\nV4:",w[:,3])
-
-
-
