@@ -2,7 +2,6 @@ import numpy as np
 import math
 import scipy as sp
 
-
 #Exercício 2
 
 #definir função que devolve o vetor correspondente de quaterniões
@@ -56,17 +55,16 @@ x_0 = np.array([phi_0, theta_0, psi_0]) #graus
 w = np.array([p, q, r]) #graus
 
 #calcular M e M_d
-eta_0 =np.transpose(eta_v0(x_0))
-m = M(w)
-m_d = sp.linalg.expm(m*h)
-
+eta_0 =np.transpose(eta_v0(x_0))    #rad
+m = M(w)                            #rad/s
+m_d = sp.linalg.expm(m*h)           # F         e^(rad/s) * rad ...
 
 #calcular eta_t1:
-eta_1 = m_d.dot(eta_0)
+eta_1 = m_d.dot(eta_0)              #num sei
 
 #transformar os valores de eta para os ângulos de euler correspondentes:
 x_t1 = np.degrees(X_e(eta_1))
 
-print(x_t1[0])
-print(x_t1[1])
-print(x_t1[2])
+print("phi=",x_t1[0])
+print("theta=",x_t1[1])
+print("psi=",x_t1[2])
