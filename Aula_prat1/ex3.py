@@ -2,7 +2,7 @@ import numpy as np
 import math
 import scipy as sp
 
-#Exercício 2
+#Exercício 3
 
 #definir função que devolve o vetor correspondente de quaterniões
     #entrada em graus saída em radianos
