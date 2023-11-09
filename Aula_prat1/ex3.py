@@ -1,22 +1,8 @@
 import numpy as np
 import math
-import scipy.linalg as sl
+import scipy as sp
 
 #Exercício 2
-
-#Dados do enunciado:
-
-theta_0 = 89.9
-phi_0 = 30
-psi_0 = 45
-p = 50
-q = 30
-r = 10
-h = 0.01
-
-#definir vetores x_0 e w
-x_0 = np.array([phi_0, theta_0, psi_0])
-w = np.array([p, q, r])
 
 #definir função que devolve o vetor correspondente de quaterniões
 def eta_v0(x):
@@ -40,4 +26,29 @@ def M(w):
                      [q, -r, 0, p],
                      [r, q, -p, 0]])
 
+
+
+#Dados do enunciado:
+
+theta_0 = 89.9
+phi_0 = 30
+psi_0 = 45
+p = 50
+q = 30
+r = 10
+h = 0.01
+
+#definir vetores x_0 e w
+x_0 = np.array([phi_0, theta_0, psi_0])
+w = np.array([p, q, r])
+
+#calcular M e M_d
+
+m = M(w)
+m_d = sp.linalg.expm(m*h)
+
+
+#calcular eta_t1:
+
+eta_1 = m_d
 
