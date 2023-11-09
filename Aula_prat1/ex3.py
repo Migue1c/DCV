@@ -60,7 +60,7 @@ m = M(w)                            #rad/s
 m_d = sp.linalg.expm(m*h)           # F         e^(rad/s) * rad ...
 
 #calcular eta_t1:
-eta_1 = m_d.dot(eta_0)              #num sei
+eta_1 = m_d.dot(eta_0)              #não sei deve tar bem
 
 #transformar os valores de eta para os ângulos de euler correspondentes:
 x_t1 = np.degrees(X_e(eta_1))
