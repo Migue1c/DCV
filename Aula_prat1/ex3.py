@@ -63,6 +63,10 @@ print(m)
 print(m_t)
 print(m_d)
 np.savetxt("Mteste.txt", m_t, delimiter="\t", fmt="%f")
+with open("Mteste.txt", "a") as file:
+    np.savetxt(file, m_d, delimiter="\t", fmt="%f") 
+
+
 
 '''
 #calcular eta_t1:
