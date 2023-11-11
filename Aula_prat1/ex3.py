@@ -57,7 +57,10 @@ w = np.array([p, q, r]) #graus
 #calcular M e M_d
 eta_0 =np.transpose(eta_v0(x_0))    #rad
 m = M(w)                            #rad/s
-m_d = sp.linalg.expm(m*h)           # F         e^(rad/s) * rad ...
+m_t = m*h
+m_d = sp.linalg.expm(m_t)           # F         e^(rad/s) * rad ...
+#print(m)
+#print(m_d)
 
 #calcular eta_t1:
 eta_1 = m_d.dot(eta_0)              #não sei deve tar bem
