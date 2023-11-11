@@ -59,9 +59,12 @@ eta_0 =np.transpose(eta_v0(x_0))    #rad
 m = M(w)                            #rad/s
 m_t = m*h
 m_d = sp.linalg.expm(m_t)           # F         e^(rad/s) * rad ...
-#print(m)
-#print(m_d)
+print(m)
+print(m_t)
+print(m_d)
+np.savetxt("Mteste.txt", m_t, delimiter="\t", fmt="%f")
 
+'''
 #calcular eta_t1:
 eta_1 = m_d.dot(eta_0)              #não sei deve tar bem
 
@@ -70,4 +73,4 @@ x_t1 = np.degrees(X_e(eta_1))
 
 print("phi=",x_t1[0])
 print("theta=",x_t1[1])
-print("psi=",x_t1[2])
+print("psi=",x_t1[2])'''
