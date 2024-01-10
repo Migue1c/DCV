@@ -4,6 +4,7 @@ import math as m
 import scipy as sp
 import matplotlib.pyplot as plt
 
+
 #function to compute eta values:
 def eta_v0(x):
     #a = np.radians(x[0])    #phi
@@ -52,7 +53,6 @@ def X_e(eta_u):
 
 
 
-
 # Reading the Sheet
 dataf_read     = ['tempo','p','q','r']
 dataf_pqr         = pd.read_excel('AnexoA.xls', sheet_name = 'Sheet14', usecols = dataf_read, skiprows = 5)  #mudar variaveis
@@ -90,10 +90,10 @@ while i < len(valores_t):
     #increase i value
     i += 1
 #print(x_r)
-    
+
 #convert to dataframe (easier plotting)
 x_dataf = pd.DataFrame(x_r, columns = ['tempo', 'phi', 'theta', 'psi'])
 #print(x_dataf)
 
-x_dataf.plot(x='tempo',y='phi')
+x_dataf.plot(x='tempo',y=['phi', 'theta', 'psi'])
 plt.show()
