@@ -472,9 +472,9 @@ tf=20
 delta_t=0.01
 
 n=int(tf/delta_t)
-theta_k0=np.zeros((n+2,1))
-u_k0=np.zeros((n+2,1))
-vt=np.zeros((n+2,1))
+theta_k0=np.zeros((n+1,1))
+u_k0=np.zeros((n+1,1))
+vt=np.zeros((n+1,1))
 tk0=t0
 Ac=A_long-B_long@K_Long
 Ad=sc.linalg.expm(Ac*delta_t)
@@ -503,9 +503,9 @@ x_ast=np.array([[ref[0]],[ref[1]],[ref[2]],[ref[3]]])
 u_ast=np.array([[ref[4]],[ref[5]]])
 
 k=0
-theta_k=np.zeros((n+2,1))
-u_k=np.zeros((n+2,1))
-vt=np.zeros((n+2,1))
+theta_k=np.zeros((n+1,1))
+u_k=np.zeros((n+1,1))
+vt=np.zeros((n+1,1))
 
 tk=t0
 #simulação:
@@ -570,16 +570,16 @@ plt.show()
 print("\n ################ \n LATERODIRECIONAL: \n################ \n")
 
 #Coeficientes:
-lambda_lat=80
-miu_lat=1
+lambda_lat=10000
+miu_lat=0.005
 
 #Valores de referência:
-theta_ref= 0.151
-u_ref= 42
+phi_ref= 0.151
+v_ref= 42
 
 #Funções para obter K:
-R_lat=np.array([[miu_lat/(delta_e_max**2), 0],[0, miu_lat/(delta_T_max**2)]])
-Q_lat=np.array([[lambda_lat/(u_max**2), 0, 0, 0],[0, lambda_lat/(w_max**2), 0, 0],[0, 0, lambda_lat/(q_max**2), 0],[ 0, 0, 0, lambda_lat/(theta_max**2)]])
+R_lat=np.array([[miu_lat/(delta_a_max**2), 0],[0, miu_lat/(delta_r_max**2)]])
+Q_lat=np.array([[lambda_lat/(v_max**2), 0, 0, 0],[0, lambda_lat/(p_max**2), 0, 0],[0, 0, lambda_lat/(r_max**2), 0],[ 0, 0, 0, lambda_lat/(phi_max**2)]])
 
 [K_lat,P_lat,E_lat]=ct.lqr(A_lat,B_lat,Q_lat,R_lat)
 print("K=\n",K_lat)
@@ -590,7 +590,7 @@ print("E=\n",E_lat)
 #Controlador para a Origem:
 k=0
 t0=0
-tf=50
+tf=10
 delta_t=0.01
 
 n=int(tf/delta_t)
@@ -600,7 +600,7 @@ vt=np.zeros((n+2,1))
 tk=t0
 Ac=A_lat-B_lat@K_lat
 Ad=sc.linalg.expm(Ac*delta_t)
-x_0=np.array([[v0],[0],[0],[0.53]])
+x_0=np.array([[v0],[0],[0],[0.151]])
 xk0=x_0
 phi_k0[k]=xk0[3]
 v_k0[k]=xk0[0]
