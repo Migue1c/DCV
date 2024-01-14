@@ -1,6 +1,5 @@
 import pandas as pd
 import numpy as np
-import math as m
 import scipy as sp
 import matplotlib.pyplot as plt
 
@@ -89,7 +88,7 @@ while i < len(valores_t):
     m_i = M(pqr)
     m_d = sp.linalg.expm(m_i * h)
     eta_1 = m_d @ eta_i
-    print(eta_1)
+    #print(eta_1)
     #values for next iteration
     ang_i = X_e(eta_1) #value will be stored on the next iteration
     i += 1
@@ -97,7 +96,7 @@ while i < len(valores_t):
 
 #convert matrix to dataframe (easier plotting)
 x_dataf = pd.DataFrame(x_r, columns = ['tempo', 'phi', 'theta', 'psi'])
-#print(x_dataf)
+print(x_dataf)
 
 x_dataf.plot(x='tempo',y=['phi', 'theta', 'psi'])
 plt.show()
